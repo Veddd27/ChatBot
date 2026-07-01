@@ -19,11 +19,14 @@ A conversational chatbot built with [LangGraph](https://github.com/langchain-ai/
 
 ## Project Structure
 
+```
 ChatBot/
-├── app.py                          # Main app: streaming + persistent multi-thread chat
+├── app.py                          # Main app — streaming + persistent multi-thread chat
 ├── langgraph_database_backend.py   # LangGraph graph + SQLite checkpointer
-├── iterations/                     # Earlier build steps, kept to show progression
-│   ├── langgraph_backend.py             # Step 1: basic in-memory chatbot
-│   ├── streamlit_frontend_streaming.py  # Step 2: added token streaming
-│   └── streamlit_frontend_threading.py  # Step 3: added multi-thread chat (in-memory)
-└── requirements.txt
+├── requirements.txt                # Python dependencies
+├── .env.example                    # Environment variable template
+└── iterations/                     # Earlier build steps, kept to show progression
+    ├── langgraph_backend.py             # Step 1 — basic in-memory chatbot
+    ├── streamlit_frontend_streaming.py  # Step 2 — added token streaming
+    └── streamlit_frontend_threading.py  # Step 3 — added multi-thread chat (in-memory)
+```
