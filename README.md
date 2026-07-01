@@ -54,4 +54,6 @@ The core of the app is a LangGraph `StateGraph` with a single `chat_node` that c
 
 ## Status
 
-This project is a work in progress — built as a hands-on way to learn agentic AI patterns with LangGraph (state management, checkpointing, streaming). Next steps may include tool-calling nodes, RAG integration, or multi-agent workflows.
+## Status
+
+Actively maintained — planned next steps include tool-calling nodes, RAG integration, and multi-agent workflows.
