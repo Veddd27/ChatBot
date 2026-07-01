@@ -30,3 +30,28 @@ ChatBot/
     ├── streamlit_frontend_streaming.py  # Step 2 — added token streaming
     └── streamlit_frontend_threading.py  # Step 3 — added multi-thread chat (in-memory)
 ```
+
+## Setup
+
+1. Clone the repo and install dependencies:
+```bash
+   pip install -r requirements.txt
+```
+
+2. Copy `.env.example` to `.env` and add your OpenAI API key:
+```bash
+   cp .env.example .env
+```
+
+3. Run the app:
+```bash
+   streamlit run app.py
+```
+
+## How It Works
+
+The core of the app is a LangGraph `StateGraph` with a single `chat_node` that calls an OpenAI chat model and appends the response to conversation state. Each conversation is tied to a `thread_id`, and LangGraph's `SqliteSaver` checkpointer persists the full message history for every thread to `chatbot.db`. The Streamlit sidebar lists all past threads (loaded via `retrieve_all_threads()`), letting you resume any previous conversation, while new messages stream back token-by-token for a responsive chat experience.
+
+## Status
+
+This project is a work in progress — built as a hands-on way to learn agentic AI patterns with LangGraph (state management, checkpointing, streaming). Next steps may include tool-calling nodes, RAG integration, or multi-agent workflows.
